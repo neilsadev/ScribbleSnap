@@ -98,8 +98,20 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/csslib-0.17.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "delta_to_html",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/delta_to_html-0.2.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -110,14 +122,56 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "device_info_plus",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/device_info_plus-9.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "diff_match_patch",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/diff_match_patch-0.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "email_validator",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/email_validator-2.1.17",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
+      "name": "equatable",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/equatable-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "fade_shimmer",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/fade_shimmer-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/fake_async-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/ffi-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/file-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -195,9 +249,57 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///home/ebd/fvm/versions/3.3.0/packages/flutter",
+      "rootUri": "file:///home/ebd/fvm/versions/3.10.6/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_colorpicker",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_colorpicker-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_html",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_html-3.0.0-beta.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_keyboard_visibility",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_keyboard_visibility_linux",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_linux-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_keyboard_visibility_macos",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_macos-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_keyboard_visibility_platform_interface",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_platform_interface-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_keyboard_visibility_web",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_web-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_keyboard_visibility_windows",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility_windows-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_launcher_icons",
@@ -213,9 +315,15 @@
     },
     {
       "name": "flutter_localizations",
-      "rootUri": "file:///home/ebd/fvm/versions/3.3.0/packages/flutter_localizations",
+      "rootUri": "file:///home/ebd/fvm/versions/3.10.6/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_quill",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_quill-7.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_svg",
@@ -225,15 +333,33 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///home/ebd/fvm/versions/3.3.0/packages/flutter_test",
+      "rootUri": "file:///home/ebd/fvm/versions/3.10.6/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///home/ebd/fvm/versions/3.3.0/packages/flutter_web_plugins",
+      "rootUri": "file:///home/ebd/fvm/versions/3.10.6/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "hive",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/hive-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/html-0.15.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "html2md",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/html2md-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "http",
@@ -246,6 +372,12 @@
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "i18n_extension",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/i18n_extension-9.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "image",
@@ -278,6 +410,18 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "list_counter",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/list_counter-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "lottie",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/lottie-2.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/matcher-0.12.15",
       "packageUri": "lib/",
@@ -296,6 +440,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pasteboard",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/pasteboard-0.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/path-1.8.3",
       "packageUri": "lib/",
@@ -308,10 +458,22 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pedantic",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/pedantic-1.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "petitparser",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/petitparser-5.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/platform-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "plugin_platform_interface",
@@ -326,6 +488,18 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "quill_json_to_html",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/quill_json_to_html-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "quiver",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/quiver-3.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "rename_app_plus",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/rename_app_plus-1.2.1",
       "packageUri": "lib/",
@@ -333,7 +507,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///home/ebd/fvm/versions/3.3.0/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///home/ebd/fvm/versions/3.10.6/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -342,6 +516,12 @@
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/source_span-1.9.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "sprintf",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
@@ -380,6 +560,54 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher-6.1.12",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.37",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_ios-6.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_linux-3.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_macos-3.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_web-2.0.18",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/url_launcher_windows-3.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "vector_graphics",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/vector_graphics-1.1.7",
       "packageUri": "lib/",
@@ -404,6 +632,18 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "win32",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/win32-4.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "win32_registry",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/win32_registry-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/xml-6.3.0",
       "packageUri": "lib/",
@@ -422,7 +662,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-06T08:48:45.536931Z",
+  "generated": "2023-08-06T10:44:55.579946Z",
   "generator": "pub",
   "generatorVersion": "3.0.6"
 }
