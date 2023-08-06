@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>871968501796-kfsmql3ots905i5n408dv15mk8jq2t25.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.871968501796-kfsmql3ots905i5n408dv15mk8jq2t25</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD7bI3Uxb-0rly8eO_KGTO3JfHF9z89IQQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>871968501796</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.scribblesnap</string>
+	<key>PROJECT_ID</key>
+	<string>scribblesnap-b355a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>scribblesnap-b355a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:871968501796:ios:b849c4a360b089b4cba8b1</string>
+</dict>
+</plist>

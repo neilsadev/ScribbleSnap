@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "871968501796",
+    "project_id": "scribblesnap-b355a",
+    "storage_bucket": "scribblesnap-b355a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871968501796:android:56f2a397f468243ecba8b1",
+        "android_client_info": {
+          "package_name": "com.scribblesnap.kodotique"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871968501796-vd890pbkc11vlu5f08n8m8rbjhci4qen.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXHJNOykqjk5pBsyG_gYvPu5ZdT353vZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871968501796-vd890pbkc11vlu5f08n8m8rbjhci4qen.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
