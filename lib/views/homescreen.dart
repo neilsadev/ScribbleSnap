@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:intl/intl.dart';
@@ -16,13 +18,51 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Note> sampleNotes = [];
   List<Note> filteredNotes = [];
   bool sorted = false;
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  getOffers() async {
+    await db.collection("notes").get().then(
+      (querySnapshot) {
+        print("Successfully completed");
+        print(querySnapshot.size);
+        for (var docSnapshot in querySnapshot.docs) {
+          print('${docSnapshot.id} => ${docSnapshot.data()}');
+          if (docSnapshot.data()["user_id"] != auth.currentUser?.uid) {
+            continue;
+          }
+          try {
+            sampleNotes.add(
+              Note(
+                  userId: docSnapshot.data()["userId"],
+                  title: docSnapshot.data()["title"],
+                  content: docSnapshot.data()["content"],
+                  createdAt: docSnapshot.data()["createdAt"],
+                  modifiedTime: docSnapshot.data()["modifiedAt"]),
+            );
+          } catch (e) {
+            print(e);
+          }
+
+          setState(() {});
+        }
+      },
+      onError: (e) => print("Error completing: $e"),
+    );
+    if (sampleNotes.isNotEmpty) {
+      filteredNotes = sampleNotes;
+    }
+    setState(() {});
+    print(sampleNotes.length);
+  }
 
   @override
   void initState() {
     super.initState();
-    filteredNotes = sampleNotes;
+    getOffers();
   }
 
   List<Note> sortNotesByModifiedTime(List<Note> notes) {
@@ -167,7 +207,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               sampleNotes[originalIndex] = Note(
                                   userId: 1,
-                                  id: sampleNotes[originalIndex].id,
                                   title: result[0],
                                   content: result[1],
                                   createdAt: DateTime.now(),
@@ -175,7 +214,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               filteredNotes[index] = Note(
                                   userId: 1,
-                                  id: filteredNotes[index].id,
                                   title: result[0],
                                   content: result[1],
                                   createdAt: DateTime.now(),
@@ -259,7 +297,6 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 sampleNotes.add(Note(
                     userId: 1,
-                    id: sampleNotes.length,
                     title: result[0],
                     content: result[1],
                     createdAt: DateTime.now(),

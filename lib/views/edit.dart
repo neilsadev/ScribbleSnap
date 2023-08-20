@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delta_to_html/delta_to_html.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import '../models/notes.dart';
@@ -16,6 +18,8 @@ class _EditScreenState extends State<EditScreen> {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _contentController = TextEditingController();
   QuillController _quillController = QuillController.basic();
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  final FirebaseAuth auth = FirebaseAuth.instance;
   ScrollController scrollController = ScrollController();
   FocusNode focusNode = FocusNode();
 
@@ -39,6 +43,22 @@ class _EditScreenState extends State<EditScreen> {
     }
 
     super.initState();
+  }
+
+  sendRequest() {
+    // Create a new user with a first and last name
+    final note = <String, dynamic>{
+      "userId": auth.currentUser?.uid,
+      "title": _titleController.text,
+      "content": quillDeltaToHtml(_quillController.document.toDelta()).trim(),
+      "createdAt":
+          widget.note == null ? DateTime.now() : widget.note!.createdAt,
+      "modifiedAt": DateTime.now(),
+    };
+    if (widget.note == null) {
+      db.collection("notes").add(note).then((DocumentReference doc) =>
+          print('DocumentSnapshot added with ID: ${doc.id}'));
+    } else {}
   }
 
   @override
@@ -109,13 +129,6 @@ class _EditScreenState extends State<EditScreen> {
                 //         color: Colors.grey,
                 //       )),
                 // ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: QuillToolbar.basic(
-                    controller: _quillController,
-                    color: Colors.grey.shade800,
-                  ),
-                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -144,12 +157,64 @@ class _EditScreenState extends State<EditScreen> {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: QuillToolbar.basic(
+                      controller: _quillController,
+                      color: Colors.grey.shade800,
+                      showDividers: false,
+                      showFontFamily: false,
+                      showFontSize: false,
+                      showBoldButton: false,
+                      showItalicButton: false,
+                      showSmallButton: false,
+                      showUnderLineButton: false,
+                      showStrikeThrough: false,
+                      showInlineCode: false,
+                      showColorButton: false,
+                      showBackgroundColorButton: false,
+                      showClearFormat: false,
+                      showAlignmentButtons: false,
+                      showLeftAlignment: false,
+                      showCenterAlignment: false,
+                      showRightAlignment: false,
+                      showJustifyAlignment: false,
+                      showHeaderStyle: false,
+                      showListNumbers: false,
+                      showListBullets: false,
+                      showListCheck: false,
+                      showCodeBlock: false,
+                      showQuote: false,
+                      showIndent: false,
+                      showLink: false,
+                      showUndo: false,
+                      showRedo: false,
+                      showDirection: false,
+                      showSearchButton: false,
+                      showSubscript: false,
+                      showSuperscript: false,
+                      customButtons: [
+                        QuillCustomButton(icon: Icons.ac_unit, onTap: () {}),
+                        QuillCustomButton(
+                            icon: Icons.ac_unit,
+                            onTap: () {
+                              //TODO: Solution
+                              _quillController.formatSelection(Attribute.bold);
+                            }),
+                        QuillCustomButton(
+                            icon: Icons.ac_unit,
+                            onTap: () {
+                              debugPrint('snowflake3');
+                            }),
+                      ]),
+                ),
               ],
             ))
           ]),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            sendRequest();
             Navigator.pop(context, [
               _titleController.text,
               quillDeltaToHtml(_quillController.document.toDelta()).trim(),
