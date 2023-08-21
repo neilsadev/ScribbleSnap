@@ -254,6 +254,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_animate",
+      "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_animate-4.2.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_colorpicker",
       "rootUri": "file:///home/ebd/.pub-cache/hosted/pub.dev/flutter_colorpicker-1.0.3",
       "packageUri": "lib/",
@@ -662,7 +668,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-20T15:35:34.364436Z",
+  "generated": "2023-08-21T11:52:29.383802Z",
   "generator": "pub",
   "generatorVersion": "3.0.6"
 }
