@@ -1,12 +1,16 @@
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delta_to_html/delta_to_html.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_quill/flutter_quill.dart' hide Text;
+import 'package:scribblesnap/views/embed/spreadsheet_embed.dart';
 import 'package:scribblesnap/views/widgets/table/table.dart';
 import '../models/notes.dart';
 import 'package:html2md/html2md.dart' as html2md;
+import 'embed/spreadsheet_button.dart';
+import 'embed/spreadsheet_embed_builder.dart';
 
 class EditScreen extends StatefulWidget {
   final Note? note;
@@ -45,10 +49,11 @@ class _EditScreenState extends State<EditScreen>
       _titleController = TextEditingController(text: widget.note!.title);
       _contentController = TextEditingController(text: widget.note!.content);
       _quillController = QuillController(
-          document: Document()
-            ..insert(0, html2md.convert(widget.note!.content))
-            ..toDelta(),
-          selection: const TextSelection.collapsed(offset: 0));
+        document: Document()
+          ..insert(0, html2md.convert(widget.note!.content))
+          ..toDelta(),
+        selection: const TextSelection.collapsed(offset: 0),
+      );
     }
 
     super.initState();
@@ -68,6 +73,26 @@ class _EditScreenState extends State<EditScreen>
       db.collection("notes").add(note).then((DocumentReference doc) =>
           print('DocumentSnapshot added with ID: ${doc.id}'));
     } else {}
+  }
+
+  Future<void> addSpreadSheet(BuildContext context, QuillController controller,
+      {Document? document}) async {
+    final isEditing = document != null;
+
+    final block = BlockEmbed.custom(
+      CustomSpreadsheetBlockEmbed.fromDocument(controller.document),
+    );
+    final index = controller.selection.baseOffset;
+    final length = controller.selection.extentOffset - index;
+
+    if (isEditing) {
+      final offset =
+          getEmbedNode(controller, controller.selection.start).offset;
+      controller.replaceText(
+          offset, 1, block, TextSelection.collapsed(offset: offset));
+    } else {
+      controller.replaceText(index, length, block, null);
+    }
   }
 
   @override
@@ -142,7 +167,7 @@ class _EditScreenState extends State<EditScreen>
                   height: 20,
                 ),
                 Container(
-                  height: 250,
+                  height: 300,
                   decoration: BoxDecoration(
                     // color: Colors.white,
                     border: Border.all(color: Colors.black),
@@ -163,6 +188,7 @@ class _EditScreenState extends State<EditScreen>
                       showCursor: true,
                       scrollBottomInset: 100,
                       keyboardAppearance: Brightness.dark,
+                      embedBuilders: [CustomSpreadsheetEmbedBuilder()],
                     ),
                   ),
                 ),
@@ -176,6 +202,15 @@ class _EditScreenState extends State<EditScreen>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      IconButton(
+                        onPressed: () {
+                          addSpreadSheet(
+                            context,
+                            _quillController,
+                          );
+                        },
+                        icon: const Icon(Icons.table_chart_outlined),
+                      ),
                       IconButton(
                         onPressed: () {
                           _quillController.undo();
@@ -340,63 +375,24 @@ class _EditScreenState extends State<EditScreen>
             ))
           ]),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     sendRequest();
-        //     Navigator.pop(context, [
-        //       _titleController.text,
-        //       quillDeltaToHtml(_quillController.document.toDelta()).trim(),
-        //     ]);
-        //   },
-        //   elevation: 10,
-        //   backgroundColor: Colors.grey.shade800,
-        //   child: const Icon(
-        //     Icons.save,
-        //     color: Colors.white,
-        //   ),
-        // ),
-      ),
-    );
-  }
-
-  void _showExpandedMenu(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          // Adjust the height of your bottom sheet here
-          height: 300,
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.camera),
-                title: Text('Take a Photo'),
-                onTap: () {
-                  // Handle the action
-                  Navigator.pop(context); // Close the bottom sheet
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.photo),
-                title: Text('Choose from Gallery'),
-                onTap: () {
-                  // Handle the action
-                  Navigator.pop(context); // Close the bottom sheet
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.location_on),
-                title: Text('Share Location'),
-                onTap: () {
-                  // Handle the action
-                  Navigator.pop(context); // Close the bottom sheet
-                },
-              ),
-              // Add more ListTiles for additional menu items
-            ],
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            // sendRequest();
+            // Navigator.pop(context, [
+            //   _titleController.text,
+            //   quillDeltaToHtml(_quillController.document.toDelta()).trim(),
+            // ]);
+            var json = jsonEncode(_quillController.document.toDelta().toJson());
+            print(json);
+          },
+          elevation: 10,
+          backgroundColor: Colors.grey.shade800,
+          child: const Icon(
+            Icons.save,
+            color: Colors.white,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

@@ -24,7 +24,7 @@ class _AuthScreenState extends State<AuthScreen> {
               EmailLinkSignInAction((context) {
                 Navigator.pushReplacementNamed(context, '/email-link-sign-in');
               }),
-              AuthStateChangeAction<UserCreated>((context, _) {
+              AuthStateChangeAction<SignedIn>((context, _) {
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
